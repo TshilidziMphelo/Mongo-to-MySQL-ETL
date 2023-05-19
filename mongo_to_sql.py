@@ -8,6 +8,8 @@ data = collection.find({}, {'_id': 0})
 
 df = pd.DataFrame(list(data))
 
+df = df.replace({np.nan: None})
+
 mysql_conn = mysql.connector.connect(
     host="localhost",
     user="eai_rw",
